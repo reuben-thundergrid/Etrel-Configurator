@@ -8,10 +8,15 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Chrisl21-Minecraft-Coal.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="default-config.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Chrisl21-Minecraft-Coal.ico" />
   </ItemGroup>
 
   <ItemGroup>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             buttonConfig = new Button();
             textBox1 = new TextBox();
             label1 = new Label();
@@ -147,8 +148,10 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(buttonConfig);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
-            Text = "Form1";
+            Text = "0.0.6";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
