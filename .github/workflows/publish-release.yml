@@ -21,13 +21,13 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: Build project
-      run: dotnet build src/Freshup -c Release
+      run: dotnet build Etrel-Configurator -c Release
  
     - name: Execute unit tests
-      run: dotnet test src/Freshup -c Release --no-build
+      run: dotnet test Etrel-Configurator -c Release --no-build
 
     - name: Publish project
-      run: dotnet publish src/Freshup -c Release --no-build -o Publish
+      run: dotnet publish Etrel-Configurator -c Release --no-build -o Publish
     
     - name: Download Squirrel tools
       uses: robinraju/release-downloader@v1.8
@@ -41,7 +41,7 @@ jobs:
       run: 7z x -oSquirrelTools SquirrelTools-*.zip
 
     - name: Create Squirrel package
-      run: SquirrelTools/Squirrel.exe pack --packId "Freshup" --framework net6 --packVersion "$env:GITHUB_REF_NAME" --packDirectory Publish
+      run: SquirrelTools/Squirrel.exe pack --packId "Etrel-Configurator" --framework net6 --packVersion "$env:GITHUB_REF_NAME" --packDirectory Publish
 
     - name: Create Github Release
       uses: softprops/action-gh-release@v0.1.15
