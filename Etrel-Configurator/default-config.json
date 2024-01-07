@@ -1,0 +1,11 @@
+{
+  "configurationOperations": {
+    "Authorization[Type]": "ChargerWhitelistAndCentralSystem",
+    "Authorization[SupportContact]": "0800 387 877",
+    "Authorization[Login][AppDownloadUrl]": "chargenow.thundergrid.net",
+    "Authorization[Login][SupportPage]": "chargenow.thundergrid.net/#/portal/conversations"
+  },
+  "configurationPowerManagement": {
+    "Time[TimeZoneRegion]": "Pacific/Auckland"
+  }
+}
