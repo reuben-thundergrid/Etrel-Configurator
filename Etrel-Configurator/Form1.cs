@@ -10,10 +10,12 @@ namespace Etrel_Configurator
         public Form1()
         {
             InitializeComponent();
+            buttonImage.Enabled = false;
         }
 
         private async void buttonConfigClick(object sender, EventArgs e)
         {
+            buttonImage.Enabled = false;
             try
             {
                 richTextBox1.Text += "Uploading config..." + Environment.NewLine;
@@ -24,11 +26,7 @@ namespace Etrel_Configurator
                 richTextBox1.Text += "Config upload success" + Environment.NewLine;
             }
             catch (Exception ex) { richTextBox1.Text += ex.Message + Environment.NewLine; }
-
-            //await charger.BasicConfig();
-            //richTextBox1.AppendText("Basic config with charger success");
-            //await charger.ClusterConfig(textBox2.Text);
-            //richTextBox1.AppendText("Cluster config with charger success");
+            buttonImage.Enabled = true;
         }
 
         public Dictionary<string, Dictionary<string, string>> ImportConfig()
@@ -61,7 +59,7 @@ namespace Etrel_Configurator
 
         private void buttonImageClick(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
