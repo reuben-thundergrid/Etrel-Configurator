@@ -1,17 +1,76 @@
+using Squirrel;
+using Squirrel.Sources;
+
 namespace Etrel_Configurator
 {
-    internal static class Program
+    public class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+        public static SemanticVersion CurrentVersion { get; private set; }
+
         [STAThread]
-        static void Main()
+        static async Task Main(string[] args)
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            SquirrelAwareApp.HandleEvents(
+                onInitialInstall: OnAppInstall,
+                onAppUninstall: OnAppUninstall,
+                onEveryRun: OnAppRun);
+
+            await CheckUpdates();
+            DoUpdateLoop();
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }
+
+        #region UPDATES
+
+        private static async void DoUpdateLoop()
+        {
+            while (true)
+            {
+                try
+                {
+                    await Task.Delay(TimeSpan.FromHours(1));
+                    await CheckUpdates();
+                }
+                catch
+                {
+                    await Task.Delay(TimeSpan.FromHours(2));
+                }
+            }
+        }
+
+        private static async Task CheckUpdates()
+        {
+            using (var mgr = new UpdateManager(new GithubSource("https://github.com/reuben-thundergrid/Etrel-Configurator", string.Empty, false)))
+            {
+                if (mgr.IsInstalledApp)
+                {
+                    var newVersion = await mgr.UpdateApp();
+
+                    if (newVersion != null)
+                    {
+                        UpdateManager.RestartApp();
+                    }
+                }
+            }
+        }
+
+        private static void OnAppInstall(SemanticVersion version, IAppTools tools)
+        {
+            tools.CreateShortcutForThisExe(ShortcutLocation.StartMenu);
+        }
+
+        private static void OnAppUninstall(SemanticVersion version, IAppTools tools)
+        {
+            tools.RemoveShortcutForThisExe(ShortcutLocation.StartMenu);
+        }
+
+        private static void OnAppRun(SemanticVersion version, IAppTools tools, bool firstRun)
+        {
+            CurrentVersion = version;
+            tools.SetProcessAppUserModelId();
+        }
+
+        #endregion
     }
 }
