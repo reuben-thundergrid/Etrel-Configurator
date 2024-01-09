@@ -34,16 +34,17 @@
             label1 = new Label();
             buttonRestart = new Button();
             buttonImage = new Button();
-            progressBar1 = new ProgressBar();
             richTextBox1 = new RichTextBox();
+            buttonConfigSettings = new Button();
+            buttonImageSelect = new Button();
             SuspendLayout();
             // 
             // buttonConfig
             // 
             buttonConfig.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            buttonConfig.Location = new Point(12, 390);
+            buttonConfig.Location = new Point(12, 479);
             buttonConfig.Name = "buttonConfig";
-            buttonConfig.Size = new Size(313, 30);
+            buttonConfig.Size = new Size(278, 30);
             buttonConfig.TabIndex = 0;
             buttonConfig.Text = "Upload Config";
             buttonConfig.UseVisualStyleBackColor = true;
@@ -74,7 +75,7 @@
             // buttonRestart
             // 
             buttonRestart.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            buttonRestart.Location = new Point(12, 426);
+            buttonRestart.Location = new Point(12, 515);
             buttonRestart.Name = "buttonRestart";
             buttonRestart.Size = new Size(313, 30);
             buttonRestart.TabIndex = 3;
@@ -85,38 +86,51 @@
             // buttonImage
             // 
             buttonImage.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            buttonImage.Location = new Point(12, 350);
+            buttonImage.Location = new Point(12, 439);
             buttonImage.Name = "buttonImage";
-            buttonImage.Size = new Size(313, 34);
+            buttonImage.Size = new Size(278, 34);
             buttonImage.TabIndex = 6;
             buttonImage.Text = "Upload Image";
             buttonImage.UseVisualStyleBackColor = true;
             buttonImage.Click += buttonImageClick;
-            // 
-            // progressBar1
-            // 
-            progressBar1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            progressBar1.Location = new Point(12, 462);
-            progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(313, 23);
-            progressBar1.TabIndex = 7;
             // 
             // richTextBox1
             // 
             richTextBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             richTextBox1.Location = new Point(12, 71);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(313, 273);
+            richTextBox1.Size = new Size(313, 362);
             richTextBox1.TabIndex = 8;
             richTextBox1.Text = "";
+            // 
+            // buttonConfigSettings
+            // 
+            buttonConfigSettings.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonConfigSettings.Location = new Point(295, 479);
+            buttonConfigSettings.Name = "buttonConfigSettings";
+            buttonConfigSettings.Size = new Size(30, 30);
+            buttonConfigSettings.TabIndex = 9;
+            buttonConfigSettings.Text = "⚙️";
+            buttonConfigSettings.UseVisualStyleBackColor = true;
+            // 
+            // buttonImageSelect
+            // 
+            buttonImageSelect.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonImageSelect.Location = new Point(295, 439);
+            buttonImageSelect.Name = "buttonImageSelect";
+            buttonImageSelect.Size = new Size(30, 30);
+            buttonImageSelect.TabIndex = 10;
+            buttonImageSelect.Text = "🖼️";
+            buttonImageSelect.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(337, 497);
+            ClientSize = new Size(337, 557);
+            Controls.Add(buttonImageSelect);
+            Controls.Add(buttonConfigSettings);
             Controls.Add(richTextBox1);
-            Controls.Add(progressBar1);
             Controls.Add(buttonImage);
             Controls.Add(buttonRestart);
             Controls.Add(label1);
@@ -137,7 +151,8 @@
         private Label label1;
         private Button buttonRestart;
         private Button buttonImage;
-        private ProgressBar progressBar1;
         private RichTextBox richTextBox1;
+        private Button buttonConfigSettings;
+        private Button buttonImageSelect;
     }
 }
