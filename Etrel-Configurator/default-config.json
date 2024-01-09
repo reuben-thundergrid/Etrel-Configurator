@@ -34,8 +34,5 @@
   },
   "timeServers":{
     "timeServers": "pool.ntp.org,time.windows.com"
-  },
-  "time":{
-    "time": "CURRENT_TIME"
   }
 }
