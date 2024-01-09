@@ -33,8 +33,6 @@
             textBox1 = new TextBox();
             label1 = new Label();
             buttonRestart = new Button();
-            textBox2 = new TextBox();
-            label2 = new Label();
             buttonImage = new Button();
             progressBar1 = new ProgressBar();
             richTextBox1 = new RichTextBox();
@@ -84,28 +82,6 @@
             buttonRestart.UseVisualStyleBackColor = true;
             buttonRestart.Click += buttonRestartClick;
             // 
-            // textBox2
-            // 
-            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox2.Location = new Point(12, 101);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(313, 23);
-            textBox2.TabIndex = 4;
-            textBox2.Text = "192.168.1.101";
-            textBox2.TextAlign = HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(131, 68);
-            label2.Name = "label2";
-            label2.Size = new Size(77, 30);
-            label2.TabIndex = 5;
-            label2.Text = "Master";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // buttonImage
             // 
             buttonImage.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -128,9 +104,9 @@
             // richTextBox1
             // 
             richTextBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            richTextBox1.Location = new Point(12, 130);
+            richTextBox1.Location = new Point(12, 71);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(313, 214);
+            richTextBox1.Size = new Size(313, 273);
             richTextBox1.TabIndex = 8;
             richTextBox1.Text = "";
             // 
@@ -142,8 +118,6 @@
             Controls.Add(richTextBox1);
             Controls.Add(progressBar1);
             Controls.Add(buttonImage);
-            Controls.Add(label2);
-            Controls.Add(textBox2);
             Controls.Add(buttonRestart);
             Controls.Add(label1);
             Controls.Add(textBox1);
@@ -162,8 +136,6 @@
         private TextBox textBox1;
         private Label label1;
         private Button buttonRestart;
-        private TextBox textBox2;
-        private Label label2;
         private Button buttonImage;
         private ProgressBar progressBar1;
         private RichTextBox richTextBox1;

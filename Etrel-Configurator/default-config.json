@@ -1,11 +1,34 @@
 {
   "configurationOperations": {
+    "Gui[ScreenSaverBacklightMode]": "SteadyOff",
+    "Gui[ChargingStatus][PublicSlides]": "ChargingPower,ConsumedEnergy,ChargedRange,SessionTime",
+    "Gui[ChargingStatus][PrivateSlides]": "ChargingPower,ConsumedEnergy,ChargedRange,SessionTime",
+    "Session[DefaultChargingMode]": "Smart",
+    "Evses[0][GridConnection][ConnectedToASinglePhase]": "false",
+    "Gui[Cultures]": "en-GB",
+    "Gui[Currency]": "$",
+    "Time[TimeZoneRegion]": "Pacific/Auckland",
     "Authorization[Type]": "ChargerWhitelistAndCentralSystem",
     "Authorization[SupportContact]": "0800 387 877",
     "Authorization[Login][AppDownloadUrl]": "chargenow.thundergrid.net",
-    "Authorization[Login][SupportPage]": "chargenow.thundergrid.net/#/portal/conversations"
+    "Authorization[Login][SupportPage]": "chargenow.thundergrid.net/#/portal/conversations",
+    "Network[Gsm][IsEnabled]": "true",
+    "Network[Gsm][Apn]": "m2mone.co.nz",
+    "CentralSystem[CommunicationEnabled]": "true",
+    "CentralSystem[Identity]": "CHARGER_SERIAL_NUMBER",
+    "CentralSystem[Client][Servers][0][Protocol]": "OCPP1_6J",
+    "CentralSystem[Client][Servers][0][Url]": "wss://ecogeekco.etrel.com/Starfish.WebSockets/api/OCPP1_6/",
+    "PowerManagement[PrimaryMaster][IsEnabled]": "false",
+    "PowerManagement[PrimaryMaster][Address]": "192.168.1.101",
+    "PowerManagement[MaxOutputCurrentWhenClusterCommFails]": "7"
   },
   "configurationPowerManagement": {
     "Time[TimeZoneRegion]": "Pacific/Auckland"
+  },
+  "timeServers":{
+    "timeServers": "pool.ntp.org,time.windows.com"
+  },
+  "time":{
+    "time": "CURRENT_TIME"
   }
 }
