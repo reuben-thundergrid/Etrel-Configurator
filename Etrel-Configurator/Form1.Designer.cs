@@ -57,7 +57,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(313, 23);
             textBox1.TabIndex = 1;
-            textBox1.Text = "10.124.146.134";
+            textBox1.Text = "192.168.1.250";
             textBox1.TextAlign = HorizontalAlignment.Center;
             // 
             // label1
@@ -138,7 +138,7 @@
             Controls.Add(buttonConfig);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
-            Text = "0.0.7";
+            Text = "0.0.8";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
