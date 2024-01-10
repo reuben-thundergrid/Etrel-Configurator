@@ -2,6 +2,7 @@ using IPChanger;
 using Newtonsoft.Json;
 using System.Net;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace Etrel_Configurator
 {
@@ -11,11 +12,13 @@ namespace Etrel_Configurator
         {
             InitializeComponent();
             buttonImage.Enabled = false;
+            buttonImageSelect.Enabled = false;
+            buttonConfigSettings.Enabled = false;
         }
 
         private async void buttonConfigClick(object sender, EventArgs e)
         {
-            buttonImage.Enabled = false;
+            buttonConfig.Enabled = false;
             richTextBox1.Text += "Uploading config..." + Environment.NewLine;
             richTextBox1.Text += "Attempting config upload" + Environment.NewLine;
             try
@@ -25,7 +28,7 @@ namespace Etrel_Configurator
                 richTextBox1.Text += "Config upload success" + Environment.NewLine;
             }
             catch (Exception ex) { richTextBox1.Text += ex.Message + Environment.NewLine; }
-            buttonImage.Enabled = true;
+            buttonConfig.Enabled = true;
         }
 
         public Dictionary<string, Dictionary<string, string>> ImportConfig()
