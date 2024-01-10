@@ -138,7 +138,7 @@
             Controls.Add(buttonConfig);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
-            Text = "0.0.8";
+            Text = "0.0.9";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
