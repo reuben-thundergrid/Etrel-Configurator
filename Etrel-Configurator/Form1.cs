@@ -22,7 +22,7 @@ namespace Etrel_Configurator
                 Charger charger = new Charger(textBox1.Text, "root@etrel.com", "toor");
                 richTextBox1.Text += "Auth with charger success" + Environment.NewLine;
                 richTextBox1.Text += "Attempting config upload" + Environment.NewLine;
-                charger.UploadConfig(ImportConfig());
+                await charger.UploadConfig(ImportConfig());
                 richTextBox1.Text += "Config upload success" + Environment.NewLine;
             }
             catch (Exception ex) { richTextBox1.Text += ex.Message + Environment.NewLine; }
@@ -31,10 +31,11 @@ namespace Etrel_Configurator
 
         public Dictionary<string, Dictionary<string, string>> ImportConfig()
         {
-            var assembly = Assembly.GetExecutingAssembly();
+            Assembly assembly = Assembly.GetExecutingAssembly();
             string resourceName = assembly.GetManifestResourceNames()
                 .Single(str => str.EndsWith("default-config.json"));
-            using Stream stream = assembly.GetManifestResourceStream(resourceName);
+            using Stream? stream = assembly.GetManifestResourceStream(resourceName);
+            if(stream == null) { throw new Exception("stream null when importing default-config.json");  }
             using StreamReader reader = new StreamReader(stream);
 
             string result = reader.ReadToEnd();

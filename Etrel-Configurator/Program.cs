@@ -5,7 +5,7 @@ namespace Etrel_Configurator
 {
     public class Program
     {
-        public static SemanticVersion CurrentVersion { get; private set; }
+        public static SemanticVersion? CurrentVersion { get; private set; }
 
         [STAThread]
         static async Task Main(string[] args)

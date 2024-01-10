@@ -36,7 +36,9 @@ namespace IPChanger
         {
             RestRequest request = new RestRequest("api/systemInformation", Method.Get);
             RestResponse response = await _client.ExecuteAsync(request);
-            ChargerSystemInformation info = JsonConvert.DeserializeObject<ChargerSystemInformation>(response.Content);
+            if (response.Content == null) { throw new Exception("GetSystemInfo response from charger was null"); }
+            ChargerSystemInformation? info = JsonConvert.DeserializeObject<ChargerSystemInformation>(response.Content);
+            if(info == null) { throw new Exception("ChargerSystemInformation was null"); }
             return info;
         }
 
