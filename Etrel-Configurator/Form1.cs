@@ -1,5 +1,7 @@
 using IPChanger;
 using Newtonsoft.Json;
+using System.Net.Sockets;
+using System.Net;
 using System.Reflection;
 
 namespace Etrel_Configurator
@@ -12,6 +14,11 @@ namespace Etrel_Configurator
             buttonImage.Enabled = false;
             buttonImageSelect.Enabled = false;
             buttonConfigSettings.Enabled = false;
+            //Has to have a port specified
+            if (TCPCheck(IPEndPoint.Parse("10.124.146.134:80")))
+            {
+                richTextBox1.Text += "Charger online" + Environment.NewLine;
+            }
         }
 
         private async void buttonConfigClick(object sender, EventArgs e)
@@ -65,6 +72,23 @@ namespace Etrel_Configurator
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        static bool TCPCheck(IPEndPoint endpoint)
+        {
+            using (TcpClient tcpClient = new TcpClient())
+            {
+                try
+                {
+                    tcpClient.Connect(endpoint);
+                    return true;
+                }
+                catch (SocketException ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    return false;
+                }
+            }
         }
     }
 }
