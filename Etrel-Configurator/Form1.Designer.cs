@@ -37,6 +37,7 @@
             richTextBox1 = new RichTextBox();
             buttonConfigSettings = new Button();
             buttonImageSelect = new Button();
+            buttonOpenGUI = new Button();
             SuspendLayout();
             // 
             // buttonConfig
@@ -55,7 +56,7 @@
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.Location = new Point(12, 42);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(313, 23);
+            textBox1.Size = new Size(278, 23);
             textBox1.TabIndex = 1;
             textBox1.Text = "192.168.1.250";
             textBox1.TextAlign = HorizontalAlignment.Center;
@@ -123,11 +124,23 @@
             buttonImageSelect.Text = "🖼️";
             buttonImageSelect.UseVisualStyleBackColor = true;
             // 
+            // buttonOpenGUI
+            // 
+            buttonOpenGUI.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonOpenGUI.Location = new Point(302, 41);
+            buttonOpenGUI.Name = "buttonOpenGUI";
+            buttonOpenGUI.Size = new Size(23, 23);
+            buttonOpenGUI.TabIndex = 11;
+            buttonOpenGUI.Text = "🔗";
+            buttonOpenGUI.UseVisualStyleBackColor = true;
+            buttonOpenGUI.Click += buttonOpenGUI_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(337, 557);
+            Controls.Add(buttonOpenGUI);
             Controls.Add(buttonImageSelect);
             Controls.Add(buttonConfigSettings);
             Controls.Add(richTextBox1);
@@ -154,5 +167,6 @@
         private RichTextBox richTextBox1;
         private Button buttonConfigSettings;
         private Button buttonImageSelect;
+        private Button buttonOpenGUI;
     }
 }

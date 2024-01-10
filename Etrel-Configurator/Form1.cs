@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System.Net.Sockets;
 using System.Net;
 using System.Reflection;
+using System.Diagnostics;
 
 namespace Etrel_Configurator
 {
@@ -41,7 +42,7 @@ namespace Etrel_Configurator
             string resourceName = assembly.GetManifestResourceNames()
                 .Single(str => str.EndsWith("default-config.json"));
             using Stream? stream = assembly.GetManifestResourceStream(resourceName);
-            if(stream == null) { throw new Exception("stream null when importing default-config.json"); }
+            if (stream == null) { throw new Exception("stream null when importing default-config.json"); }
             using StreamReader reader = new StreamReader(stream);
 
             string result = reader.ReadToEnd();
@@ -89,6 +90,18 @@ namespace Etrel_Configurator
                     return false;
                 }
             }
+        }
+
+        private void buttonOpenGUI_Click(object sender, EventArgs e)
+        {
+            //Need to support https at some point
+            //System.Diagnostics.Process.Start("http://" + textBox1.Text);
+            ProcessStartInfo psInfo = new ProcessStartInfo
+            {
+                FileName = "http://" + textBox1.Text,
+                UseShellExecute = true
+            };
+            Process.Start(psInfo);
         }
     }
 }
