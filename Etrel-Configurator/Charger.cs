@@ -18,6 +18,7 @@ namespace IPChanger
         private readonly RestClient _client;
         public Charger(string url, string username, string password)
         {
+            //Add support for https
             RestClientOptions? options = new RestClientOptions("http://" + url)
             {
                 Authenticator = new ChargerAuthenticator(username, password),

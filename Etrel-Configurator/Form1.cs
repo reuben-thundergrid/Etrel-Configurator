@@ -18,7 +18,6 @@ namespace Etrel_Configurator
         {
             buttonConfig.Enabled = false;
             richTextBox1.Text += "Uploading config..." + Environment.NewLine;
-            richTextBox1.Text += "Attempting config upload" + Environment.NewLine;
             try
             {
                 Charger charger = new Charger(textBox1.Text, "root@etrel.com", "toor");
