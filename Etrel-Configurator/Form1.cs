@@ -16,12 +16,11 @@ namespace Etrel_Configurator
         private async void buttonConfigClick(object sender, EventArgs e)
         {
             buttonImage.Enabled = false;
+            richTextBox1.Text += "Uploading config..." + Environment.NewLine;
+            richTextBox1.Text += "Attempting config upload" + Environment.NewLine;
             try
             {
-                richTextBox1.Text += "Uploading config..." + Environment.NewLine;
                 Charger charger = new Charger(textBox1.Text, "root@etrel.com", "toor");
-                richTextBox1.Text += "Auth with charger success" + Environment.NewLine;
-                richTextBox1.Text += "Attempting config upload" + Environment.NewLine;
                 await charger.UploadConfig(ImportConfig());
                 richTextBox1.Text += "Config upload success" + Environment.NewLine;
             }
@@ -35,7 +34,7 @@ namespace Etrel_Configurator
             string resourceName = assembly.GetManifestResourceNames()
                 .Single(str => str.EndsWith("default-config.json"));
             using Stream? stream = assembly.GetManifestResourceStream(resourceName);
-            if(stream == null) { throw new Exception("stream null when importing default-config.json");  }
+            if(stream == null) { throw new Exception("stream null when importing default-config.json"); }
             using StreamReader reader = new StreamReader(stream);
 
             string result = reader.ReadToEnd();
