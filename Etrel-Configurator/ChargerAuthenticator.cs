@@ -33,6 +33,8 @@ namespace IPChanger
             var definition = new { Token = "" };
             var tokenData = JsonConvert.DeserializeAnonymousType(loginResponse.Content, definition);
 
+            if(tokenData == null) { throw new Exception("Authentication failed, charger token response was null"); }
+
             request.AddOrUpdateHeader(KnownHeaders.Authorization, "Bearer " + tokenData.Token);
         }
     }
