@@ -1,8 +1,6 @@
 using IPChanger;
 using Newtonsoft.Json;
-using System.Net;
 using System.Reflection;
-using System.Windows.Forms;
 
 namespace Etrel_Configurator
 {
