@@ -92,6 +92,12 @@ namespace Etrel_Configurator
             }
         }
 
+        private void buttonOpenGUI_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTipOpenGUI = new System.Windows.Forms.ToolTip();
+            ToolTipOpenGUI.SetToolTip(this.buttonOpenGUI, "Open Charger Web GUI");
+        }
+
         private void buttonOpenGUI_Click(object sender, EventArgs e)
         {
             //Need to support https at some point
@@ -102,6 +108,18 @@ namespace Etrel_Configurator
                 UseShellExecute = true
             };
             Process.Start(psInfo);
+        }
+
+        private void buttonImageSelect_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTipImageSelect = new System.Windows.Forms.ToolTip();
+            ToolTipImageSelect.SetToolTip(this.buttonOpenGUI, "Select Charger Logo");
+        }
+
+        private void buttonConfigSettings_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTipConfigSettings = new System.Windows.Forms.ToolTip();
+            ToolTipConfigSettings.SetToolTip(this.buttonOpenGUI, "Edit config");
         }
     }
 }

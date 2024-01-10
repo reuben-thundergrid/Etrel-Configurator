@@ -113,6 +113,7 @@
             buttonConfigSettings.TabIndex = 9;
             buttonConfigSettings.Text = "⚙️";
             buttonConfigSettings.UseVisualStyleBackColor = true;
+            buttonConfigSettings.MouseHover += buttonConfigSettings_MouseHover;
             // 
             // buttonImageSelect
             // 
@@ -123,17 +124,20 @@
             buttonImageSelect.TabIndex = 10;
             buttonImageSelect.Text = "🖼️";
             buttonImageSelect.UseVisualStyleBackColor = true;
+            buttonImageSelect.MouseHover += buttonImageSelect_MouseHover;
             // 
             // buttonOpenGUI
             // 
             buttonOpenGUI.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonOpenGUI.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             buttonOpenGUI.Location = new Point(302, 41);
             buttonOpenGUI.Name = "buttonOpenGUI";
             buttonOpenGUI.Size = new Size(23, 23);
             buttonOpenGUI.TabIndex = 11;
-            buttonOpenGUI.Text = "🔗";
+            buttonOpenGUI.Text = "↗️";
             buttonOpenGUI.UseVisualStyleBackColor = true;
             buttonOpenGUI.Click += buttonOpenGUI_Click;
+            buttonOpenGUI.MouseHover += buttonOpenGUI_MouseHover;
             // 
             // Form1
             // 
