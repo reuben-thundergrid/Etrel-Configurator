@@ -94,6 +94,7 @@ namespace Etrel_Configurator
 
         private void buttonOpenGUI_MouseHover(object sender, EventArgs e)
         {
+            //Is this a good idea to create this everytime you hover?
             System.Windows.Forms.ToolTip ToolTipOpenGUI = new System.Windows.Forms.ToolTip();
             ToolTipOpenGUI.SetToolTip(this.buttonOpenGUI, "Open Charger Web GUI");
         }
@@ -101,7 +102,6 @@ namespace Etrel_Configurator
         private void buttonOpenGUI_Click(object sender, EventArgs e)
         {
             //Need to support https at some point
-            //System.Diagnostics.Process.Start("http://" + textBox1.Text);
             ProcessStartInfo psInfo = new ProcessStartInfo
             {
                 FileName = "http://" + textBox1.Text,
