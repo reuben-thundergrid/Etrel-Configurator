@@ -54,7 +54,7 @@ namespace Etrel_Configurator
         private async void buttonRestartClick(object sender, EventArgs e)
         {
             buttonRestart.Enabled = false;
-            richTextBox1.Text += "Atempting restart..." + Environment.NewLine;
+            richTextBox1.Text += "Attempting restart..." + Environment.NewLine;
             try
             {
                 Charger charger = new Charger(textBox1.Text, "root@etrel.com", "toor");
