@@ -15,7 +15,7 @@ namespace Etrel_Configurator
 {
     public partial class SettingsForm : Form
     {
-        public ChargerConfig chargerConfig;
+        private ChargerConfig chargerConfig;
         public bool save = false;
         public SettingsForm(ChargerConfig chargerConfig)
         {

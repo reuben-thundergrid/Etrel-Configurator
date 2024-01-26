@@ -38,6 +38,7 @@
             buttonConfigSettings = new Button();
             buttonImageSelect = new Button();
             buttonOpenGUI = new Button();
+            openFileDialog1 = new OpenFileDialog();
             SuspendLayout();
             // 
             // buttonConfig
@@ -125,6 +126,7 @@
             buttonImageSelect.TabIndex = 10;
             buttonImageSelect.Text = "🖼️";
             buttonImageSelect.UseVisualStyleBackColor = true;
+            buttonImageSelect.Click += buttonImageSelect_Click;
             buttonImageSelect.MouseHover += buttonImageSelect_MouseHover;
             // 
             // buttonOpenGUI
@@ -139,6 +141,11 @@
             buttonOpenGUI.UseVisualStyleBackColor = true;
             buttonOpenGUI.Click += buttonOpenGUI_Click;
             buttonOpenGUI.MouseHover += buttonOpenGUI_MouseHover;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.Filter = "Images|*.jpg;*.jpeg;*.png";
             // 
             // Form1
             // 
@@ -173,5 +180,6 @@
         private Button buttonConfigSettings;
         private Button buttonImageSelect;
         private Button buttonOpenGUI;
+        private OpenFileDialog openFileDialog1;
     }
 }

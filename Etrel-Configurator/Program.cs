@@ -8,7 +8,7 @@ namespace Etrel_Configurator
         public static SemanticVersion? CurrentVersion { get; private set; }
 
         [STAThread]
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
             SquirrelAwareApp.HandleEvents(
                 onInitialInstall: OnAppInstall,

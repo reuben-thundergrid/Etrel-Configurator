@@ -65,11 +65,10 @@ namespace IPChanger
 
         public async Task<string> UploadLogo(string image)
         {
-            //charger expects image in base64 WITH QUOTES
-            //check postman for example
+            var image64 = Convert.ToBase64String(File.ReadAllBytes(image));
             RestRequest request = new RestRequest("api/vendorLogo", Method.Post);
             request.AddHeader("Content-Type", "text/plain");
-            string body = "dasd"; // = image
+            string body = "\"" + image64 + "\"";
             request.AddParameter("text/plain", body, ParameterType.RequestBody);
             RestResponse response = await _client.ExecuteAsync(request);
             if (response.Content == null) { throw new Exception("Uploading image charger response was null"); }

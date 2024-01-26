@@ -15,13 +15,12 @@ namespace Etrel_Configurator
         readonly string configFolder;
         readonly string configFile;
         readonly int currentConfigVersion = 1; //Needs to be updated with the default-config.json
+        string imagePath;
         ChargerConfig chargerConfig;
         public Form1()
         {
             InitializeComponent();
             buttonImage.Enabled = false;
-            buttonImageSelect.Enabled = false;
-            buttonConfigSettings.Enabled = true;
 
             configFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EtrelConfigurator");
             configFile = Path.Combine(configFolder, "config.json");
@@ -62,9 +61,17 @@ namespace Etrel_Configurator
             buttonRestart.Enabled = true;
         }
 
-        private void buttonImageClick(object sender, EventArgs e)
+        private async void buttonImageClick(object sender, EventArgs e)
         {
-
+            buttonImage.Enabled = false;
+            try
+            {
+                Charger charger = new Charger(textBox1.Text, "root@etrel.com", "toor");
+                await charger.UploadLogo(imagePath);
+                richTextBox1.Text += "Image upload with success" + Environment.NewLine;
+            }
+            catch (Exception ex) { richTextBox1.Text += ex.Message + Environment.NewLine; }
+            buttonImage.Enabled = true;
         }
 
         private async void Form1_Load(object sender, EventArgs e)
@@ -75,24 +82,24 @@ namespace Etrel_Configurator
                 {
                     var file = await File.ReadAllTextAsync(configFile);
                     chargerConfig = JsonConvert.DeserializeObject<ChargerConfig>(file);
-                    if(chargerConfig.ConfigVersion < currentConfigVersion) { WriteDefaultConfig(); }
+                    if (chargerConfig.ConfigVersion < currentConfigVersion) { WriteDefaultConfig(); }
                     return;
                 }
                 WriteDefaultConfig();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 var msgBox = MessageBox.Show("Exception happened while reading config file " +
                     Environment.NewLine +
                     Environment.NewLine +
-                    ex.Message + 
+                    ex.Message +
                     Environment.NewLine +
                     Environment.NewLine +
-                    "DO YOU WANT TO UNINSTALL WINDOWS", 
-                    "Error Message", 
+                    "DO YOU WANT TO UNINSTALL WINDOWS",
+                    "Error Message",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Error);
-                if(msgBox == DialogResult.Yes)
+                if (msgBox == DialogResult.Yes)
                 {
                     WriteDefaultConfig();
                 }
@@ -171,9 +178,18 @@ namespace Etrel_Configurator
             item.ShowDialog();
             if (item.save)
             {
-                chargerConfig = item.chargerConfig;
                 File.WriteAllText(configFile, JsonConvert.SerializeObject(chargerConfig, Formatting.Indented));
             }
+        }
+
+        private void buttonImageSelect_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog1.ShowDialog() == DialogResult.OK) 
+            {
+                imagePath = openFileDialog1.FileName;
+                buttonImage.Enabled = true;
+            }
+            richTextBox1.AppendText("Image selected " + openFileDialog1.FileName + Environment.NewLine);
         }
     }
 }
