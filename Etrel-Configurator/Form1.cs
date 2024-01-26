@@ -72,6 +72,9 @@ namespace Etrel_Configurator
         {
             Timer(); //Starts TCP check loop
 
+            string verStr = Program.CurrentVersion?.ToString() ?? "Unknown Version";
+            Text = verStr;
+
             try
             {
                 if (File.Exists(configFile))
