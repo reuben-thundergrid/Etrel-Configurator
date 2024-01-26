@@ -57,6 +57,7 @@ namespace Etrel_Configurator
         private static void OnAppInstall(SemanticVersion version, IAppTools tools)
         {
             tools.CreateShortcutForThisExe(ShortcutLocation.StartMenu);
+            MessageBox.Show("App installed, please access from the start menu");
         }
 
         private static void OnAppUninstall(SemanticVersion version, IAppTools tools)
