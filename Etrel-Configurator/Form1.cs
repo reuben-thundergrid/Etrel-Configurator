@@ -164,13 +164,13 @@ namespace Etrel_Configurator
         private void buttonImageSelect_MouseHover(object sender, EventArgs e)
         {
             System.Windows.Forms.ToolTip ToolTipImageSelect = new System.Windows.Forms.ToolTip();
-            ToolTipImageSelect.SetToolTip(this.buttonOpenGUI, "Select Charger Logo");
+            ToolTipImageSelect.SetToolTip(this.buttonImageSelect, "Select Charger Logo");
         }
 
         private void buttonConfigSettings_MouseHover(object sender, EventArgs e)
         {
             System.Windows.Forms.ToolTip ToolTipConfigSettings = new System.Windows.Forms.ToolTip();
-            ToolTipConfigSettings.SetToolTip(this.buttonOpenGUI, "Edit config");
+            ToolTipConfigSettings.SetToolTip(this.buttonConfigSettings, "Edit config");
         }
 
         private void buttonConfigSettings_Click(object sender, EventArgs e)
