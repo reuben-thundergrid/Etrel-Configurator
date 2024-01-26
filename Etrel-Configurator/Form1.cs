@@ -69,8 +69,6 @@ namespace Etrel_Configurator
 
         private async void Form1_Load(object sender, EventArgs e)
         {
-
-
             try
             {
                 if (File.Exists(configFile))
@@ -169,7 +167,13 @@ namespace Etrel_Configurator
 
         private void buttonConfigSettings_Click(object sender, EventArgs e)
         {
-            new SettingsForm().ShowDialog();
+            var item = new SettingsForm(chargerConfig);
+            item.ShowDialog();
+            if (item.save)
+            {
+                chargerConfig = item.chargerConfig;
+                File.WriteAllText(configFile, JsonConvert.SerializeObject(chargerConfig, Formatting.Indented));
+            }
         }
     }
 }

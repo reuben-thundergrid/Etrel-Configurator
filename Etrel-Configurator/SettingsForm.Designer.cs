@@ -28,102 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            textSettingControl2 = new TextSettingControl();
-            textSettingControl1 = new TextSettingControl();
-            textSettingControl3 = new TextSettingControl();
-            flowLayoutPanel1.SuspendLayout();
+            resetConfig = new Button();
+            saveConfig = new Button();
+            cancel = new Button();
+            tableLayoutPanel1 = new TableLayoutPanel();
             SuspendLayout();
             // 
-            // button1
+            // resetConfig
             // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            button1.Font = new Font("Comic Sans MS", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(12, 485);
-            button1.Name = "button1";
-            button1.Size = new Size(133, 26);
-            button1.TabIndex = 3;
-            button1.Text = "Reset to Default";
-            button1.UseVisualStyleBackColor = true;
+            resetConfig.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            resetConfig.Font = new Font("Comic Sans MS", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            resetConfig.Location = new Point(12, 485);
+            resetConfig.Name = "resetConfig";
+            resetConfig.Size = new Size(133, 26);
+            resetConfig.TabIndex = 3;
+            resetConfig.Text = "Reset to Default";
+            resetConfig.UseVisualStyleBackColor = true;
+            resetConfig.Click += resetConfig_Click;
             // 
-            // button2
+            // saveConfig
             // 
-            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            button2.Location = new Point(151, 485);
-            button2.Name = "button2";
-            button2.Size = new Size(115, 26);
-            button2.TabIndex = 4;
-            button2.Text = "Save";
-            button2.UseVisualStyleBackColor = true;
+            saveConfig.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            saveConfig.Location = new Point(151, 485);
+            saveConfig.Name = "saveConfig";
+            saveConfig.Size = new Size(115, 26);
+            saveConfig.TabIndex = 4;
+            saveConfig.Text = "Save";
+            saveConfig.UseVisualStyleBackColor = true;
+            saveConfig.Click += saveConfig_Click;
             // 
-            // button3
+            // cancel
             // 
-            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            button3.BackColor = Color.Lime;
-            button3.Location = new Point(272, 485);
-            button3.Name = "button3";
-            button3.Size = new Size(133, 26);
-            button3.TabIndex = 5;
-            button3.Text = "Cancel";
-            button3.UseVisualStyleBackColor = false;
+            cancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            cancel.BackColor = Color.Lime;
+            cancel.Location = new Point(272, 485);
+            cancel.Name = "cancel";
+            cancel.Size = new Size(133, 26);
+            cancel.TabIndex = 5;
+            cancel.Text = "Cancel";
+            cancel.UseVisualStyleBackColor = false;
+            cancel.Click += cancel_Click;
             // 
-            // flowLayoutPanel1
+            // tableLayoutPanel1
             // 
-            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel1.Controls.Add(textSettingControl2);
-            flowLayoutPanel1.Controls.Add(textSettingControl1);
-            flowLayoutPanel1.Controls.Add(textSettingControl3);
-            flowLayoutPanel1.Location = new Point(12, 12);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(393, 467);
-            flowLayoutPanel1.TabIndex = 6;
-            // 
-            // textSettingControl2
-            // 
-            textSettingControl2.Location = new Point(3, 3);
-            textSettingControl2.Name = "textSettingControl2";
-            textSettingControl2.Size = new Size(390, 25);
-            textSettingControl2.TabIndex = 1;
-            // 
-            // textSettingControl1
-            // 
-            textSettingControl1.Location = new Point(3, 34);
-            textSettingControl1.Name = "textSettingControl1";
-            textSettingControl1.Size = new Size(390, 25);
-            textSettingControl1.TabIndex = 0;
-            // 
-            // textSettingControl3
-            // 
-            textSettingControl3.Location = new Point(3, 65);
-            textSettingControl3.Name = "textSettingControl3";
-            textSettingControl3.Size = new Size(390, 25);
-            textSettingControl3.TabIndex = 2;
+            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel1.AutoScroll = true;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Location = new Point(12, 12);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(492, 467);
+            tableLayoutPanel1.TabIndex = 6;
             // 
             // SettingsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(417, 523);
-            Controls.Add(flowLayoutPanel1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            ClientSize = new Size(516, 523);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(cancel);
+            Controls.Add(saveConfig);
+            Controls.Add(resetConfig);
             Name = "SettingsForm";
             Text = "SettingsForm";
-            flowLayoutPanel1.ResumeLayout(false);
+            Load += SettingsForm_Load;
             ResumeLayout(false);
         }
 
         #endregion
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private TextSettingControl textSettingControl2;
-        private TextSettingControl textSettingControl1;
-        private TextSettingControl textSettingControl3;
+        private Button resetConfig;
+        private Button saveConfig;
+        private Button cancel;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

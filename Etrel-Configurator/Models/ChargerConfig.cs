@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Etrel_Configurator.Models
 {
-    internal class ChargerConfig
+    public class ChargerConfig
     {
         [JsonProperty("configVersion")]
         public int ConfigVersion { get; set; }
