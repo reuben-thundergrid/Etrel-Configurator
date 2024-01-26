@@ -25,12 +25,6 @@ namespace Etrel_Configurator
             configFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EtrelConfigurator");
             configFile = Path.Combine(configFolder, "config.json");
             Directory.CreateDirectory(configFolder);
-
-            //Has to have a port specified
-            //if (TCPCheck(IPEndPoint.Parse("10.124.146.134:80")))
-            //{
-            //    richTextBox1.Text += "Charger online" + Environment.NewLine;
-            //}
         }
 
         private async void buttonConfigClick(object sender, EventArgs e)
@@ -76,6 +70,8 @@ namespace Etrel_Configurator
 
         private async void Form1_Load(object sender, EventArgs e)
         {
+            Timer(); //Starts TCP check loop
+
             try
             {
                 if (File.Exists(configFile))
@@ -125,13 +121,14 @@ namespace Etrel_Configurator
             chargerConfig = JsonConvert.DeserializeObject<ChargerConfig>(result);
         }
 
-        static bool TCPCheck(IPEndPoint endpoint)
+        static async Task<bool> TCPCheck(IPEndPoint endpoint)
         {
+            if(endpoint.Port == 0) { endpoint.Port = 80; }
             using (TcpClient tcpClient = new TcpClient())
             {
                 try
                 {
-                    tcpClient.Connect(endpoint);
+                    await tcpClient.ConnectAsync(endpoint);
                     return true;
                 }
                 catch (SocketException ex)
@@ -184,12 +181,37 @@ namespace Etrel_Configurator
 
         private void buttonImageSelect_Click(object sender, EventArgs e)
         {
-            if(openFileDialog1.ShowDialog() == DialogResult.OK) 
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 imagePath = openFileDialog1.FileName;
                 buttonImage.Enabled = true;
             }
             richTextBox1.AppendText("Image selected " + openFileDialog1.FileName + Environment.NewLine);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private async void Timer()
+        {
+            while (true)
+            {
+                try
+                {
+                    if (await TCPCheck(IPEndPoint.Parse(textBox1.Text)))
+                    {
+                        panel1.BackColor = Color.Green;
+                    }
+                    else { panel1.BackColor = Color.Red; }
+                }
+                catch
+                {
+                    panel1.BackColor = Color.Gray;
+                }
+                await Task.Delay(500);
+            }
         }
     }
 }

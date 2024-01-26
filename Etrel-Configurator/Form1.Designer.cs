@@ -39,6 +39,7 @@
             buttonImageSelect = new Button();
             buttonOpenGUI = new Button();
             openFileDialog1 = new OpenFileDialog();
+            panel1 = new Panel();
             SuspendLayout();
             // 
             // buttonConfig
@@ -57,7 +58,7 @@
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.Location = new Point(12, 42);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(278, 23);
+            textBox1.Size = new Size(259, 23);
             textBox1.TabIndex = 1;
             textBox1.Text = "192.168.1.250";
             textBox1.TextAlign = HorizontalAlignment.Center;
@@ -131,7 +132,7 @@
             // 
             // buttonOpenGUI
             // 
-            buttonOpenGUI.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonOpenGUI.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonOpenGUI.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             buttonOpenGUI.Location = new Point(302, 41);
             buttonOpenGUI.Name = "buttonOpenGUI";
@@ -147,11 +148,22 @@
             openFileDialog1.FileName = "openFileDialog1";
             openFileDialog1.Filter = "Images|*.jpg;*.jpeg;*.png";
             // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel1.BackColor = Color.Silver;
+            panel1.Location = new Point(275, 42);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(23, 23);
+            panel1.TabIndex = 12;
+            panel1.Paint += panel1_Paint;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(337, 557);
+            Controls.Add(panel1);
             Controls.Add(buttonOpenGUI);
             Controls.Add(buttonImageSelect);
             Controls.Add(buttonConfigSettings);
@@ -181,5 +193,6 @@
         private Button buttonImageSelect;
         private Button buttonOpenGUI;
         private OpenFileDialog openFileDialog1;
+        private Panel panel1;
     }
 }
