@@ -2,7 +2,7 @@
 A tool desinged to speed up repetitive programming of Etrel chargers
 
 ## Features to add
-- [ ] Custom logo upload ![](https://geps.dev/progress/40)
+- [x] Custom logo upload ![](https://geps.dev/progress/100)
 - [x] Custom config settings ![](https://geps.dev/progress/100)
 - [ ] Charger status (offline, online) ![](https://geps.dev/progress/80)
 - [ ] Improved logging ![](https://geps.dev/progress/0)
