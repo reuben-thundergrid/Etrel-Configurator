@@ -58,6 +58,7 @@ namespace Etrel_Configurator
         private async void buttonImageClick(object sender, EventArgs e)
         {
             buttonImage.Enabled = false;
+            richTextBox1.Text += "Attempting image upload..." + Environment.NewLine;
             try
             {
                 Charger charger = new Charger(textBox1.Text, "root@etrel.com", "toor");
