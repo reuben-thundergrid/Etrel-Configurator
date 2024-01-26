@@ -7,6 +7,7 @@ A tool desinged to speed up repetitive programming of Etrel chargers
 - [x] Charger status (offline, online) ![](https://geps.dev/progress/100)
 - [x] Dynamic version changing ![](https://geps.dev/progress/100)
 - [ ] Improved logging ![](https://geps.dev/progress/0)
+- [ ] Load config from charger ![](https://geps.dev/progress/0)
 - [ ] Full HTTPS support ![](https://geps.dev/progress/0)
 
 ## Master charger settings
