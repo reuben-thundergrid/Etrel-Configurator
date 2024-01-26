@@ -15,7 +15,7 @@ namespace Etrel_Configurator
         readonly string configFolder;
         readonly string configFile;
         readonly int currentConfigVersion = 1; //Needs to be updated with the default-config.json
-        string imagePath;
+        string? imagePath;
         ChargerConfig chargerConfig;
         public Form1()
         {
