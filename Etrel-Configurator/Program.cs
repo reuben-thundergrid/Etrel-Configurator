@@ -15,7 +15,6 @@ namespace Etrel_Configurator
                 onAppUninstall: OnAppUninstall,
                 onEveryRun: OnAppRun);
 
-            await CheckUpdates();
             DoUpdateLoop();
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
@@ -29,8 +28,8 @@ namespace Etrel_Configurator
             {
                 try
                 {
-                    await Task.Delay(TimeSpan.FromHours(1));
                     await CheckUpdates();
+                    await Task.Delay(TimeSpan.FromHours(1));
                 }
                 catch
                 {

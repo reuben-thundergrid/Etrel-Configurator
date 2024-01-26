@@ -113,6 +113,7 @@
             buttonConfigSettings.TabIndex = 9;
             buttonConfigSettings.Text = "⚙️";
             buttonConfigSettings.UseVisualStyleBackColor = true;
+            buttonConfigSettings.Click += buttonConfigSettings_Click;
             buttonConfigSettings.MouseHover += buttonConfigSettings_MouseHover;
             // 
             // buttonImageSelect

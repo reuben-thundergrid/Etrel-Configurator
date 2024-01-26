@@ -1,38 +1,41 @@
 {
-  "configurationOperations": {
-    "Gui[ScreenSaverBacklightMode]": "SteadyOff",
-    "Gui[ChargingStatus][PublicSlides]": "ChargingPower,ConsumedEnergy,ChargedRange,SessionTime",
-    "Gui[ChargingStatus][PrivateSlides]": "ChargingPower,ConsumedEnergy,ChargedRange,SessionTime",
-    "Session[DefaultChargingMode]": "Smart",
-    "Evses[0][EvseCode]": "NZ-TG1-0000-01",
-    "Evses[0][GridConnection][ConnectedToASinglePhase]": "true",
-    "Evses[0][GridConnection][EvseL1ConnectedToPhase]": "L1",
-    "Evses[0][GridConnection][EvseL2ConnectedToPhase]": "L2",
-    "Evses[0][GridConnection][EvseL3ConnectedToPhase]": "L3",
-    "Gui[Cultures]": "en-GB",
-    "Gui[Currency]": "$",
-    "Time[TimeZoneRegion]": "Pacific/Auckland",
-    "Authorization[Type]": "ChargerWhitelistAndCentralSystem",
-    "Authorization[SupportContact]": "0800 387 877",
-    "Authorization[Login][AppDownloadUrl]": "chargenow.thundergrid.net",
-    "Authorization[Login][SupportPage]": "chargenow.thundergrid.net/#/portal/conversations",
-    "Authorization[OcppAuthorizationCacheEnabled]": "true",
-    "Network[Gsm][IsEnabled]": "true",
-    "Network[Gsm][Apn]": "m2mone.co.nz",
-    "CentralSystem[CommunicationEnabled]": "true",
-    "CentralSystem[Identity]": "CHARGER_SERIAL_NUMBER",
-    "CentralSystem[Client][Servers][0][Protocol]": "OCPP1_6J",
-    "CentralSystem[Client][Servers][0][Url]": "wss://ecogeekco.etrel.com/Starfish.WebSockets/api/OCPP1_6/",
-    "CentralSystem[Client][MeterValues][SampledData]": "Current_L1,Current_L2,Current_L3,Energy_Active_Import_Register,Frequency,Power_Active_Total,Temperature,Current_Offered,Power_Active_L1,Power_Active_L2,Power_Active_L3,Power_Factor,Voltage_L1,Voltage_L2,Voltage_L3",
-    "CentralSystem[Client][MeterValues][AlignedData]": "Current_L1,Current_L2,Current_L3,Current_Offered,Energy_Active_Import_Register,Frequency,Power_Active_Total,Power_Active_L1,Power_Active_L2,Power_Active_L3,Temperature,Power_Factor,Voltage_L1,Voltage_L2,Voltage_L3",
-    "PowerManagement[PrimaryMaster][IsEnabled]": "false",
-    "PowerManagement[PrimaryMaster][Address]": "127.0.0.1",
-    "PowerManagement[MaxOutputCurrentWhenClusterCommFails]": "7"
-  },
-  "configurationPowerManagement": {
-    "Time[TimeZoneRegion]": "Pacific/Auckland"
-  },
-  "timeServers":{
-    "timeServers": "pool.ntp.org,time.windows.com"
+  "configVersion": 1,
+  "apiEndpoints": {
+    "configurationOperations": {
+      "Gui[ScreenSaverBacklightMode]": "SteadyOff",
+      "Gui[ChargingStatus][PublicSlides]": "ChargingPower,ConsumedEnergy,ChargedRange,SessionTime",
+      "Gui[ChargingStatus][PrivateSlides]": "ChargingPower,ConsumedEnergy,ChargedRange,SessionTime",
+      "Session[DefaultChargingMode]": "Smart",
+      "Evses[0][EvseCode]": "NZ-TG1-0522",
+      "Evses[0][GridConnection][ConnectedToASinglePhase]": "true",
+      "Evses[0][GridConnection][EvseL1ConnectedToPhase]": "L1",
+      "Evses[0][GridConnection][EvseL2ConnectedToPhase]": "L2",
+      "Evses[0][GridConnection][EvseL3ConnectedToPhase]": "L3",
+      "Gui[Cultures]": "en-GB",
+      "Gui[Currency]": "$",
+      "Time[TimeZoneRegion]": "Pacific/Auckland",
+      "Authorization[Type]": "ChargerWhitelistAndCentralSystem",
+      "Authorization[SupportContact]": "0800 387 877",
+      "Authorization[Login][AppDownloadUrl]": "chargenow.thundergrid.net",
+      "Authorization[Login][SupportPage]": "chargenow.thundergrid.net/#/portal/conversations",
+      "Authorization[OcppAuthorizationCacheEnabled]": "true",
+      "Network[Gsm][IsEnabled]": "true",
+      "Network[Gsm][Apn]": "m2mone.co.nz",
+      "CentralSystem[CommunicationEnabled]": "true",
+      "CentralSystem[Identity]": "CHARGER_SERIAL_NUMBER",
+      "CentralSystem[Client][Servers][0][Protocol]": "OCPP1_6J",
+      "CentralSystem[Client][Servers][0][Url]": "wss://ecogeekco.etrel.com/Starfish.WebSockets/api/OCPP1_6/",
+      "CentralSystem[Client][MeterValues][SampledData]": "Current_L1,Current_L2,Current_L3,Energy_Active_Import_Register,Frequency,Power_Active_Total,Temperature,Current_Offered,Power_Active_L1,Power_Active_L2,Power_Active_L3,Power_Factor,Voltage_L1,Voltage_L2,Voltage_L3",
+      "CentralSystem[Client][MeterValues][AlignedData]": "Current_L1,Current_L2,Current_L3,Current_Offered,Energy_Active_Import_Register,Frequency,Power_Active_Total,Power_Active_L1,Power_Active_L2,Power_Active_L3,Temperature,Power_Factor,Voltage_L1,Voltage_L2,Voltage_L3",
+      "PowerManagement[PrimaryMaster][IsEnabled]": "true",
+      "PowerManagement[PrimaryMaster][Address]": "192.168.1.101",
+      "PowerManagement[MaxOutputCurrentWhenClusterCommFails]": "7"
+    },
+    "configurationPowerManagement": {
+      "Time[TimeZoneRegion]": "Pacific/Auckland"
+    },
+    "timeServers": {
+      "timeServers": "pool.ntp.org,time.windows.com"
+    }
   }
 }
