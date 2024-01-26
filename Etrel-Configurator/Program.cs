@@ -1,5 +1,6 @@
 using Squirrel;
 using Squirrel.Sources;
+using System.Windows.Forms;
 
 namespace Etrel_Configurator
 {
@@ -48,7 +49,8 @@ namespace Etrel_Configurator
 
                     if (newVersion != null)
                     {
-                        UpdateManager.RestartApp();
+                        var msgBox = MessageBox.Show("Update installed in background. Would you like to restart?", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        if(msgBox == DialogResult.Yes) { UpdateManager.RestartApp(); }
                     }
                 }
             }
