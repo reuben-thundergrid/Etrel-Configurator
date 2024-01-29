@@ -1,6 +1,8 @@
 # Etrel-Configurator
 A tool desinged to speed up repetitive programming of Etrel chargers
 
+## [Download (Windows Only)](https://github.com/reuben-thundergrid/Etrel-Configurator/releases/latest)
+
 ## Features to add
 - [x] Custom logo upload ![](https://geps.dev/progress/100)
 - [x] Custom config settings ![](https://geps.dev/progress/100)
