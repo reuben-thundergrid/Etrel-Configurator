@@ -12,6 +12,7 @@ A tool desinged to speed up repetitive programming of Etrel chargers
 - [ ] Full HTTPS support (SSL checkbox option)![](https://geps.dev/progress/0)
 - [ ] DUO support ![](https://geps.dev/progress/0)
 - [ ] Inteligent EVSE code configuration ![](https://geps.dev/progress/0)
+- [ ] Option to disable application of a setting ![](https://geps.dev/progress/0)
 
 ## Master charger settings
 There are no plans to have the ability to edit the master chargers cluster and load management settings from this app. This can be manually configured once on the lead and then this will be synced across the cluster.
