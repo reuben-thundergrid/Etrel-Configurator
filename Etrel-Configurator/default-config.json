@@ -25,7 +25,7 @@
       "CentralSystem[CommunicationEnabled]": "true",
       "CentralSystem[Identity]": "CHARGER_SERIAL_NUMBER",
       "CentralSystem[Client][Servers][0][Protocol]": "OCPP1_6J",
-      "CentralSystem[Client][Servers][0][Url]": "wss://ecogeekco.etrel.com/Starfish.WebSockets/api/OCPP1_6/",
+      "CentralSystem[Client][Servers][0][Url]": "wss://thundergrid-nz.etrel.com/Starfish.WebSockets/api/OCPP1_6/",
       "CentralSystem[Client][MeterValues][SampledData]": "Current_L1,Current_L2,Current_L3,Energy_Active_Import_Register,Frequency,Power_Active_Total,Temperature,Current_Offered,Power_Active_L1,Power_Active_L2,Power_Active_L3,Power_Factor,Voltage_L1,Voltage_L2,Voltage_L3",
       "CentralSystem[Client][MeterValues][AlignedData]": "Current_L1,Current_L2,Current_L3,Current_Offered,Energy_Active_Import_Register,Frequency,Power_Active_Total,Power_Active_L1,Power_Active_L2,Power_Active_L3,Temperature,Power_Factor,Voltage_L1,Voltage_L2,Voltage_L3",
       "PowerManagement[PrimaryMaster][IsEnabled]": "true",
