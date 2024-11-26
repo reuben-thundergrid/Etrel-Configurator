@@ -21,6 +21,3 @@ A tool desinged to speed up repetitive programming of Etrel chargers
 
 ## Master charger settings
 There are no plans to have the ability to edit the master chargers cluster and load management settings from this app. This can be manually configured once on the lead and then this will be synced across the cluster.
-
-## Syncing Time
-This is not a feature of the App. The charger can get the current time from the time servers supplied
